@@ -95,7 +95,7 @@ export default function Home() {
         {products.map((p) => (
           <div key={p.id} style={cardStyle}>
             <h3>{p.title}</h3>
-            <p style={{ fontSize: "20px", fontWeight: "bold" }}>₹{p.price}</p>
+            <p style={{ fontSize: "20px", fontWeight: "bold" }}>INR {p.price}</p>
 
             {/* Add to Cart */}
             <button style={buttonStyle} onClick={() => addToCart(p)}>

@@ -56,11 +56,11 @@ export default function OrderReview() {
             <div>
               {item.title} × {item.qty}
             </div>
-            <div>₹{item.price * item.qty}</div>
+            <div>INR {item.price * item.qty}</div>
           </div>
         ))}
 
-        <h3 style={{ marginTop: "20px" }}>Total: ₹{total}</h3>
+        <h3 style={{ marginTop: "20px" }}>Total: INR {total}</h3>
 
         {/* Submit Button */}
         <button

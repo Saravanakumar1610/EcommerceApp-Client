@@ -84,7 +84,7 @@ export default function Cart() {
             fontSize: "18px"
           }}>
             <div>{c.title} × {c.qty}</div>
-            <div>₹{c.price * c.qty}</div>
+            <div>INR {c.price * c.qty}</div>
             <button style={{
               backgroundColor: "#ff4d4d",
               color: "#fff",
