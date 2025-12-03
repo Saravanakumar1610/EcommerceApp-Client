@@ -1,0 +1,10 @@
+Frontend Ecoomerce commands
+
+
+npx create-react-app ecommerce-client --template typescript
+cd ecommerce-client
+npm install axios
+npm install react-router-dom
+npm install @types/react-router-dom --save-dev
+npm start
+npm run build

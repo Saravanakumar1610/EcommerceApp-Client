@@ -1,0 +1,13 @@
+
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "lib": ["dom", "es2018"],
+    "jsx": "react",
+    "module": "esnext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}

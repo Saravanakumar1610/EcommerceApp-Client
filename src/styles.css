@@ -1,0 +1,39 @@
+/* Entire App layout */
+.app-container {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Navbar container */
+  .navbar {
+    display: flex;
+    justify-content: space-between;   /* Left links & Right links */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #242424;
+  }
+  
+  /* Left & Right nav groups */
+  .nav-left,
+  .nav-right {
+    display: flex;
+    gap: 15px;
+  }
+  
+  /* Links inside navbar */
+  .nav-item {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .nav-item:hover {
+    color: #ffa500;
+  }
+  
+  /* Page area */
+  .page-container {
+    padding: 20px;
+  }
+  
