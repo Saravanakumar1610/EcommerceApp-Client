@@ -1,5 +1,6 @@
-import * as React from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import React from "react";
+import { Switch, Route, Link, useLocation } from "react-router-dom";
+
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -7,34 +8,44 @@ import Cart from "./pages/Cart";
 import AddProduct from "./pages/AddProduct";
 import OrderReview from "./pages/OrderReview";
 
-const navStyle: React.CSSProperties = {
-  backgroundColor: "#eee",
-  padding: "10px",
-  fontSize: "18px",
-  display: "flex",
-  justifyContent: "flex-end",
-  gap: "20px"
-};
+import "./css/App.css";
 
-const linkStyle: React.CSSProperties = {
-  color: "blue",
-  textDecoration: "none"
-};
+const App: React.FC = () => {
+  const location = useLocation();
+  const path = location.pathname;
 
-export default function App() {
   return (
-    <div>
-      <nav style={navStyle}>
-        <Link style={linkStyle} to="/">Home</Link>
-        <Link style={linkStyle} to="/login">Login</Link>
-        <Link style={linkStyle} to="/register">Register</Link>
-        <Link style={linkStyle} to="/cart">Cart</Link>
-        <Link style={linkStyle} to="/add-product">Add Product</Link>
-      </nav>
+    <div className="app-container">
+      <header className="home-header">
+        <div className="company-name">MyShop</div>
 
-      {/* 🔵 GLOBAL SESSION TIMEOUT HANDLER */}
-      
+        <nav className="app-nav">
+          {path !== "/" && (
+            <Link className="nav-link" to="/">Home</Link>
+          )}
 
+          {path !== "/login" && path !== "/register" && (
+            <Link className="nav-link" to="/login">Login</Link>
+            
+          )}
+
+          {path !== "/register" && path !== "/login" &&(
+            <Link className="nav-link" to="/register">Register</Link>
+          )}
+
+          {path !== "/cart" && (
+            <Link className="nav-link" to="/cart">Cart</Link>
+          )}
+
+          {path !== "/add-product" && (
+            <Link className="nav-link" to="/add-product">
+              Add Product
+            </Link>
+          )}
+        </nav>
+      </header>
+
+      {/* ROUTES */}
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
@@ -45,4 +56,6 @@ export default function App() {
       </Switch>
     </div>
   );
-}
+};
+
+export default App;

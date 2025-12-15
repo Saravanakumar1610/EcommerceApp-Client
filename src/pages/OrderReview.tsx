@@ -1,58 +1,58 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import "../css/OrderReview.css";
 
-export default function OrderReview() {
+/** Cart item structure */
+interface OrderItem {
+  productId: number;
+  title: string;
+  price: number;
+  qty: number;
+}
+
+/** Order stored in localStorage */
+interface Order {
+  cart: OrderItem[];
+}
+
+const OrderReview: React.FC = () => {
   const history = useHistory();
 
-  const order = JSON.parse(localStorage.getItem("lastOrder") || "null");
+  const order: Order | null = JSON.parse(
+    localStorage.getItem("lastOrder") || "null"
+  );
 
-  const [message, setMessage] = React.useState("");
+  const [message, setMessage] = useState<string>("");
 
   if (!order) {
     return (
-      <div style={{ padding: "20px" }}>
+      <div className="order-empty">
         <h2>No order found</h2>
       </div>
     );
   }
 
-  const total = order.cart?.reduce(
-    (sum: number, item: any) => sum + item.price * item.qty,
+  const total: number = order.cart.reduce(
+    (sum, item) => sum + item.price * item.qty,
     0
   );
 
-  const submitOrder = () => {
+  const submitOrder = (): void => {
     setMessage("Order Placed Successfully!");
-  
+
     setTimeout(() => {
       localStorage.removeItem("lastOrder");
       history.push("/");
     }, 1500);
   };
-  
-  return (
-    <div style={{ padding: "20px" }}>
-      <h2>Order Review</h2>
 
-      <div
-        style={{
-          width: "60%",
-          background: "#fff",
-          padding: "20px",
-          borderRadius: "10px",
-          boxShadow: "0 2px 8px rgba(0,0,0,0.1)"
-        }}
-      >
-        {order.cart?.map((item: any) => (
-          <div
-            key={item.productId}
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              padding: "12px 0",
-              borderBottom: "1px solid #ddd"
-            }}
-          >
+  return (
+    <div className="order-container">
+      <h2 className="order-title">Order Review</h2>
+
+      <div className="order-box">
+        {order.cart.map((item) => (
+          <div key={item.productId} className="order-item">
             <div>
               {item.title} × {item.qty}
             </div>
@@ -60,40 +60,20 @@ export default function OrderReview() {
           </div>
         ))}
 
-        <h3 style={{ marginTop: "20px" }}>Total: INR {total}</h3>
+        <h3 className="order-total">Total: INR {total}</h3>
 
-        {/* Submit Button */}
-        <button
-          onClick={submitOrder}
-          style={{
-            marginTop: "20px",
-            backgroundColor: "#28a745",
-            color: "white",
-            padding: "12px 20px",
-            fontSize: "18px",
-            borderRadius: "8px",
-            cursor: "pointer",
-            border: "none"
-          }}
-        >
+        <button className="order-submit-btn" onClick={submitOrder}>
           Submit Order
         </button>
 
-        {/* Inline Success Message */}
         {message && (
-          <p
-            style={{
-              marginTop: "15px",
-              fontSize: "18px",
-              color: "green",
-              fontWeight: "bold"
-            }}
-          >
+          <p className="order-success-message">
             {message}
           </p>
         )}
-
       </div>
     </div>
   );
-}
+};
+
+export default OrderReview;

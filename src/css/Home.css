@@ -1,0 +1,98 @@
+/* ===============================
+   PAGE
+================================ */
+.home-page {
+  min-height: 100vh;
+
+  /*  UPDATED: background image */
+  background-image: url("../assets/shopping-bag-cart.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /*  UPDATED: overlay effect */
+  position: relative;
+}
+
+/*  UPDATED: overlay layer */
+.home-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;  
+  z-index: 0;
+}
+
+/* ===============================
+   CONTENT
+================================ */
+.home-content {
+  padding: 30px;
+
+  /*  UPDATED: bring content above overlay */
+  position: relative;
+  z-index: 1;
+}
+
+.page-title {
+  font-size: 26px;
+  margin-bottom: 15px;
+}
+
+/* ===============================
+   MESSAGE
+================================ */
+.success-message {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #d4edda;
+  color: #155724;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+/* ===============================
+   PRODUCT FLEX
+================================ */
+.product-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-card {
+  width: 220px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+
+  /*  UPDATED: better contrast on image */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* ===============================
+   BUTTON
+================================ */
+.btn {
+  padding: 8px 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}

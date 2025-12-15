@@ -1,0 +1,102 @@
+.cart-container {
+  padding: 20px;
+  min-height: 100vh;
+
+  /* 🔵 SAME background image */
+  background-image: url("../assets/shopping-bag-cart.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+}
+
+/* 🔵 overlay */
+.cart-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Keep content above overlay */
+.cart-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+.cart-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.cart-box {
+  width: 60%;
+  background-color:  hwb(197 2% 77% / 0.085);
+
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 18px;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item-title {
+  flex: 2;
+}
+
+.cart-item-price {
+  flex: 1;
+  text-align: right;
+  font-weight: 500;
+}
+
+.cart-remove-btn {
+  margin-left: 15px;
+  background-color: #ff4d4d;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-remove-btn:hover {
+  background-color: #e60000;
+}
+
+.cart-checkout-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.cart-checkout-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+}
+
+.cart-checkout-btn:hover {
+  background-color:#e60000;
+}
+
+.cart-empty {
+  padding: 30px;
+}
