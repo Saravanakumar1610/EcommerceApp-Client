@@ -6,11 +6,7 @@ import "../css/Home.css";
 /* ===============================
    TYPES
 ================================ */
-interface Product {
-  id: number;
-  title: string;
-  price: number;
-}
+import { Product } from "../types/product";
 
 const Home: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -29,9 +25,11 @@ const Home: React.FC = () => {
   /* -----------------------------
      Add to cart
   ----------------------------- */
-  const addToCart = (p: Product): void => {
-    const cart: any[] = JSON.parse(localStorage.getItem("cart") || "[]");
 
+  const addToCart = (p: Product): void => {
+const cart: CartItem[] = JSON.parse(
+  localStorage.getItem("cart") || "[]"
+);
     const found = cart.find((it) => it.productId === p.id);
     if (found) {
       found.qty++;

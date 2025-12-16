@@ -9,7 +9,7 @@
 
   padding: 150px;
 
-  /* 🔴 SAME background as Home */
+  /*  SAME background as Home */
   background-image: url("../assets/shopping-bag-cart.jpg");
   background-size: cover;
   background-position: center;
@@ -18,7 +18,7 @@
   position: relative;
 }
 
-/* 🔴 Overlay */
+/*  Overlay */
 .login-container::before {
   content: "";
   position: absolute;
@@ -37,7 +37,7 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   text-align: center;
 
-  /* 🔴 keep above overlay */
+  /* keep above overlay */
   position: relative;
   z-index: 1;
 }

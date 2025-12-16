@@ -33,7 +33,7 @@
 
 .cart-box {
   width: 60%;
-  background-color:  hwb(197 2% 77% / 0.085);
+  background-color:  hwb(198 89% 7% / 0.884);
 
   border-radius: 10px;
   padding: 20px;
@@ -79,7 +79,7 @@
 
 .cart-checkout-wrapper {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   margin-top: 20px;
 }
 

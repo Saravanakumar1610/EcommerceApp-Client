@@ -33,7 +33,7 @@
 
 .order-box {
   width: 60%;
-  background: hwb(197 2% 77% / 0.085);
+  background: hwb(200 93% 6%);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -51,11 +51,35 @@
 }
 
 .order-total {
+  display: flex;
+ justify-content: flex-end;
+  margin-top: 20px;
+  font-weight: 700;
+  gap: 12px;
+}
+
+/* push the total value to the far right */
+.order-total .value {
+  margin-left: auto;
+  text-align: right;
+  min-width: 80px;
+}
+
+/* ensure item values remain right-aligned */
+.order-item .item-value {
+  text-align: right;
+  min-width: 80px;
+}
+
+/* fallback: push single button/value to the end */
+.order-actions {
+  display: flex;
+  justify-content: flex-end;
   margin-top: 20px;
 }
 
 .order-submit-btn {
-  margin-top: 20px;
+  /* keep visual styles, remove justify-content */
   background-color: #ff4d4d;
   color: white;
   padding: 12px 20px;

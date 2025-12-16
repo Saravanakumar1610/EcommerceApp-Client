@@ -61,11 +61,11 @@ const OrderReview: React.FC = () => {
         ))}
 
         <h3 className="order-total">Total: INR {total}</h3>
-
+        <div class="order-actions">
         <button className="order-submit-btn" onClick={submitOrder}>
           Submit Order
         </button>
-
+        </div>
         {message && (
           <p className="order-success-message">
             {message}

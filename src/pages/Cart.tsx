@@ -4,18 +4,9 @@ import { useHistory } from "react-router-dom";
 import "../css/Cart.css";
 
 /** Cart item structure */
-interface CartItem {
-  productId: number;
-  title: string;
-  price: number;
-  qty: number;
-}
 
-/** Checkout API response */
-interface CheckoutResponse {
-  message?: string;
-  user?: Record<string, unknown>;
-}
+import { CartItem } from "../types/CartItem";
+import { CheckoutResponse } from "../types/CheckoutResponse";
 
 const Cart: React.FC = () => {
   const history = useHistory();
@@ -104,12 +95,13 @@ const Cart: React.FC = () => {
             </button>
           </div>
         ))}
-      </div>
 
-      <div className="cart-checkout-wrapper">
-        <button className="cart-checkout-btn" onClick={checkout}>
-          Checkout
-        </button>
+
+        <div className="cart-checkout-wrapper">
+          <button className="cart-checkout-btn" onClick={checkout}>
+            Checkout
+          </button>
+        </div>
       </div>
     </div>
   );

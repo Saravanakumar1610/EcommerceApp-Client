@@ -3,8 +3,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;  
-  background: #2b1919;
-  color: rgba(255, 255, 255, 0.527);
+  /* fallback */ background: #ff7e00;
+  background: linear-gradient(90deg, #ff7e00 0%, #ffae42 50%, #ffd59a 100%); /* orange gradient */
+  color: rgba(255,255,255,0.95);
 }
 
 .company-name {
